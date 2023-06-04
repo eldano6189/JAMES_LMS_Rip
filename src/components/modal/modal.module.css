@@ -1,0 +1,92 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(var(--clr-1), 50%);
+  place-items: center;
+  z-index: 10;
+}
+
+.modal {
+  padding: 1.5em;
+  border: none;
+  border-radius: 1rem;
+  background-color: rgb(var(--clr-7));
+  width: 50%;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(var(--clr-2), 10%);
+}
+
+.modal__head {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1em;
+}
+
+.head__img {
+  padding: 0.5em;
+}
+
+.img__container {
+  width: 2rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: rgba(var(--clr-1), 50%);
+  display: grid;
+  place-items: center;
+}
+
+.img__container > svg {
+  height: 65%;
+  width: auto;
+}
+
+.head__text {
+  padding: 0.5em;
+  text-transform: uppercase;
+}
+
+.head__text > h2:nth-child(1) {
+  font-size: var(--fs-2);
+  padding-bottom: 0.25em;
+}
+
+.head__text > h2:nth-child(2) {
+  font-size: var(--fs-3);
+  color: rgba(var(--clr-1), 50%);
+}
+
+.grid__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid rgba(var(--clr-1), 10%);
+}
+
+.grid__cell {
+  padding: 0.5em;
+  font-size: var(--fs-3);
+  color: rgba(var(--clr-1));
+}
+
+.modal__foot {
+  padding: 1.5em 0.5em;
+}
+
+.modal__foot > button {
+  font-weight: bold;
+  color: rgb(var(--clr-6));
+  padding: 0.8em 1.2em;
+  background: rgb(var(--clr-1));
+  border: 1px solid rgb(var(--clr-6));
+  border-radius: 1000vmax;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  font-size: var(--fs-3);
+}
+
+.modal__foot > button:hover {
+  padding: 0.8em 2em;
+}

@@ -1,0 +1,28 @@
+.container__noData {
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 1rem;
+  background-color: rgba(var(--clr-7));
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(var(--clr-2), 10%);
+}
+
+.container__noData > svg {
+  width: 8rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.container__noData > h1 {
+  color: rgb(var(--clr-1));
+  font-size: var(--fs-1);
+  text-align: center;
+}
+
+.container__noData > h2 {
+  color: rgb(var(--clr-2));
+  font-size: var(--fs-2);
+  text-align: center;
+}

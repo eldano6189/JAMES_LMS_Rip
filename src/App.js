@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/header/header";
+import Modal from "./components/modal/modal";
+import Personnel from "./components/personnel/personnel";
+import Statistics from "./components/statistics/statistics";
+import NoData from "./components/no-data/noData";
+import { useContext } from "react";
+import ContextProvider from "./context/context";
 
 function App() {
+  const { dataUpload } = useContext(ContextProvider);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Modal />
+      <main>
+        {dataUpload.length > 0 ? (
+          <>
+            <Statistics />
+            <Personnel />
+          </>
+        ) : (
+          <NoData />
+        )}
+      </main>
     </div>
   );
 }

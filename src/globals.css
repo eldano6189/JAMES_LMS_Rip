@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --clr-1: 47, 19, 68;
+  --clr-2: 71, 28, 102;
+  --clr-3: 171, 151, 185;
+  --clr-4: 212, 202, 219;
+  --clr-5: 228, 228, 228;
+  --clr-6: 250, 250, 250;
+  --clr-7: 255, 255, 255;
+
+  --fs-1: 1.8rem;
+  --fs-2: 1rem;
+  --fs-3: 0.8rem;
+
+  --max-width: 1250px;
+  --shadow: rgba(var(--clr-1), 10%) 0px 7px 30px 0px;
+}
+
+.App {
+  background-color: rgb(var(--clr-6));
+  min-height: 100dvh;
+}
+
+main {
+  width: 100%;
+  transform: translateY(-3.5rem);
+}
+
+.wrapper {
+  margin: auto;
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 4vw;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
