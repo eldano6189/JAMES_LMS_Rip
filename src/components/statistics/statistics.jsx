@@ -2,6 +2,7 @@ import styles from "./statistics.module.css";
 import CountUp from "react-countup";
 import { useContext } from "react";
 import ContextProvider from "../../context/context";
+import ProgressBar from "../progress-bar/progressBar";
 
 const Statistics = () => {
   const { groupedSP, currentUA, userIncompleteCount } =
@@ -41,39 +42,35 @@ const Statistics = () => {
               <h2>
                 <CountUp start={0} end={incompleteModuleCount} />%
               </h2>
-              <p>Personnel training completion.</p>
+              <p>Personnel overall training completion percentage.</p>
             </div>
             <div className={styles.card__body}>
-              <div className={styles.bar}>
-                <div
-                  className={styles.bar__progress}
-                  style={{
-                    transform: `translateX(-${100 - incompleteModuleCount}%)`,
-                    backgroundColor:
-                      incompleteModuleCount <= 60
-                        ? "red"
-                        : incompleteModuleCount >= 61 &&
-                          incompleteModuleCount < 80
-                        ? "yellow"
-                        : incompleteModuleCount >= 80
-                        ? "green"
-                        : null,
-                  }}
-                ></div>
-              </div>
+              <ProgressBar progress={incompleteModuleCount}/>
             </div>
           </div>
           <div className={styles.card}>
-            {/* <div className={styles.card__head}>
-              <p>Usefull information.</p>
+          <div className={styles.card__head}>
+              <h2>
+                <CountUp start={0} end={incompleteModuleCount} />%
+              </h2>
+              <p>Personnel holding roles with corresponding LMS training.</p>
             </div>
             <div className={styles.card__body}>
-              <ul className={styles.list}>
-                <li>Equipment manager is the most incomplete module.</li>
-                <li>The rank of Sergeant has the most incomplete modules.</li>
-                <li>Sergeant Hall, D has the most incomplete modules.</li>
-              </ul>
-            </div> */}
+              <ProgressBar progress={70}/>
+            </div>
+          </div>
+          <div className={styles.card}>
+            <div className={styles.card__head}>
+              <p>Overall completion of specific roles.</p>
+            </div>
+            <div className={styles.card__body}>
+              <ProgressBar progress={40} title={"Own Work"}/>
+              <ProgressBar progress={90} title={"Basic"}/>
+              <ProgressBar progress={61} title={"Senior Equipment Manager"}/>
+              <ProgressBar progress={20} title={"Repair Manager"}/>
+              <ProgressBar progress={85} title={"L1 Repair Section Manager"}/>
+              <ProgressBar progress={81} title={"UA"}/>
+            </div>
           </div>
         </div>
       </div>
